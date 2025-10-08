@@ -2,24 +2,22 @@
 build/
 cmake-build*/
 
-# CMake generated artefacts
+# CMake generated files
 CMakeCache.txt
 CMakeFiles/
 Makefile
 cmake_install.cmake
 Testing/
-
-# Logs and temporary files
+AMQP-CPP/
+vosk-osx/*
+# Logs and temp
 *.log
 *.tmp
-
+vosk-osx-0.3.42/
 # IDE metadata
 .idea/
 .vscode/
 compile_commands.json
-
+models/
 # macOS
 .DS_Store
-
-venv
-AMQP-CPP
