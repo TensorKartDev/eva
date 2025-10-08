@@ -1,0 +1,25 @@
+# Build directories
+build/
+cmake-build*/
+
+# CMake generated artefacts
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+Testing/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# IDE metadata
+.idea/
+.vscode/
+compile_commands.json
+
+# macOS
+.DS_Store
+
+venv
+AMQP-CPP

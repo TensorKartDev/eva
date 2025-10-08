@@ -1,0 +1,35 @@
+services:
+  kws-build-amd64:
+    image: debian:12-slim
+    platform: linux/amd64
+    init: true
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    command: >
+      bash -lc "
+        apt-get update &&
+        export DEBIAN_FRONTEND=noninteractive &&
+        apt-get install -y --no-install-recommends
+          build-essential cmake pkg-config libasound2-dev &&
+        cmake -S . -B build &&
+        cmake --build build &&
+        ctest --test-dir build || true
+      "
+  kws-build-arm64:
+    image: debian:12-slim
+    platform: linux/arm64
+    init: true
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    command: >
+      bash -lc "
+        apt-get update &&
+        export DEBIAN_FRONTEND=noninteractive &&
+        apt-get install -y --no-install-recommends
+          build-essential cmake pkg-config libasound2-dev &&
+        cmake -S . -B build-arm64 &&
+        cmake --build build-arm64 &&
+        ctest --test-dir build-arm64 || true
+      "
